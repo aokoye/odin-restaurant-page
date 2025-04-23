@@ -85,9 +85,117 @@ const teas = [
     {
         name: 'Matcha Latte',
         description: 'Made using matcha that we source ourselves and import directly from Kyoto.',
-        price: ''
+        price: '$6.00 - $7.00'
+    },
+    {
+        name: 'Hojicha Latte',
+        description: 'Made using hojicha that we source ourselves and import directly from Kyoto.',
+        price: '$6.00 - $7.00'
     }
 ];
+
+const bobaTea = [
+    {
+        type: 'Milk Tea',
+        description: 'Milk in all of these drinks can be substituted for any of our dairy free options'
+    },
+    {
+        name: 'Oolong Milk Tea',
+        price: '$5.50'
+    },
+    {
+        name: 'Jasmine Milk Tea',
+        price: '$5.50'
+    },
+    {
+        name: 'Thai Milk Tea',
+        price: '$5.50'
+    },
+    {
+        name: 'Taro Milk Tea',
+        price: '$5.50'
+    },
+    {
+        name: 'Assam Black Milk Tea',
+        price: '$5.50'
+    },
+    {
+        type: 'Lattes',
+        description: 'Milk in all of these drinks can be substituted for any of our dairy free options'
+    },
+    {
+        name: 'Hojicha Latte',
+        price: '$6.00'
+    },
+    {
+        name: 'Matcha Latte',
+        price: '$6.00'
+    },
+    {
+        name: 'Café Latte',
+        price: '$6.00'
+    },
+    {
+        type: 'Fruit Teas'
+    },
+    {
+        name: 'Mango Passion Fruit Green Tea'
+    },
+    {
+        name: 'Grapefruit Lemon Tea'
+    },
+    {
+        name: 'Honey Citron Ginger Tea'
+    },
+    {
+        name: 'Kumquat Lychee Tea'
+    }
+]
+
+const milks = [
+    {
+        type: 'Milk Options',
+    },
+    {
+        name: '2% Milk'
+    },
+    {
+        name: 'Lactose Free Milk'
+    },
+    {
+        name: 'Soy Milk'
+    },
+    {
+        name: 'Oat Milk'
+    },
+    {
+        name: 'Almond Milk'
+    },
+]
+
+const bobaToppings = [
+    {
+        type: 'Toppings'
+    },
+    {
+        name: 'Brown Sugar Tapioca Pearls'
+    },
+    {
+        name: 'Lychee Jelly'
+    },
+    {
+        name: 'Rainbow Jelly'
+    },
+    {
+        name: 'Grass Jelly'
+    },
+    {
+        name: 'Coffee Jelly'
+    },
+    {
+        name: 'Egg Pudding'
+    },
+]
 
 
 export function loadMenu() {
@@ -98,7 +206,7 @@ export function loadMenu() {
     cafe.classList.add('coffee');
 
     const tea = document.createElement('div');
-    cafe.classList.add('tea');
+    tea.classList.add('tea');
 
     const boba = document.createElement('div');
     boba.classList.add('boba');
@@ -108,6 +216,9 @@ export function loadMenu() {
 
     const toppings = document.createElement('div');
     boba.classList.add('toppings');
+
+    const options = document.createElement('div');
+    options.classList.add('options');
     
 
     coffee.forEach((item) => {
