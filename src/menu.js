@@ -139,24 +139,26 @@ const bobaTea = [
         type: 'Fruit Teas'
     },
     {
-        name: 'Mango Passion Fruit Green Tea'
+        name: 'Mango Passion Fruit Green Tea',
+        price: '$5.50'
     },
     {
-        name: 'Grapefruit Lemon Tea'
+        name: 'Grapefruit Lemon Tea',
+        price: '$5.50'
     },
     {
-        name: 'Honey Citron Ginger Tea'
+        name: 'Honey Citron Ginger Tea',
+        price: '$5.50'
     },
     {
-        name: 'Kumquat Lychee Tea'
+        name: 'Kumquat Lychee Tea',
+        price: '$5.50'
     }
 ]
 
 const milks = [
     {
         type: 'Milk Options',
-    },
-    {
         name: '2% Milk'
     },
     {
@@ -175,9 +177,7 @@ const milks = [
 
 const bobaToppings = [
     {
-        type: 'Toppings'
-    },
-    {
+        type: 'Toppings',
         name: 'Brown Sugar Tapioca Pearls'
     },
     {
@@ -212,10 +212,10 @@ export function loadMenu() {
     boba.classList.add('boba');
 
     const milk = document.createElement('div');
-    boba.classList.add('milk');
+    milk.classList.add('milk');
 
     const toppings = document.createElement('div');
-    boba.classList.add('toppings');
+    toppings.classList.add('toppings');
 
     const options = document.createElement('div');
     options.classList.add('options');
@@ -291,8 +291,79 @@ export function loadMenu() {
         product.appendChild(descNode);
     })
 
+    bobaTea.forEach((item) => {
+        const nameNode = document.createElement('h2');
+        nameNode.textContent = item.name;
+        boba.appendChild(nameNode);
+
+        const price = document.createElement('p');
+        price.classList.add('price');
+        price.textContent = item.price;
+        boba.appendChild(price);
+
+        const product = document.createElement('div')
+        product.classList.add('product');
+        const prodPrice = document.createElement('div')
+        prodPrice.classList.add('prodPrice');
+
+        if(item.type != null) {
+            const typeNode = document.createElement('h1');
+            typeNode.classList.add('drinkType')
+            typeNode.textContent = item.type;
+            boba.appendChild(typeNode);
+            boba.appendChild(typeNode);
+        }
+
+        if(item.description != null) {
+            const descNode = document.createElement('p')
+            descNode.classList.add('description');
+            descNode.textContent = item.description;
+            boba.appendChild(descNode);
+        }
+        
+        boba.appendChild(product);
+        product.appendChild(prodPrice);
+        prodPrice.appendChild(nameNode);
+        prodPrice.appendChild(price);
+        // product.appendChild(descNode);
+    })
+
+    milks.forEach((item) => {
+        const nameNode = document.createElement('p');
+        nameNode.textContent = item.name;
+        milk.appendChild(nameNode);
+
+        if(item.type != null) {
+            const typeNode = document.createElement('h1');
+            typeNode.classList.add('drinkOption')
+            typeNode.textContent = item.type;
+            milk.appendChild(typeNode);
+            milk.appendChild(typeNode);
+        }
+        milk.appendChild(nameNode);
+        options.appendChild(milk);
+    })
+
+    bobaToppings.forEach((item) => {
+        const nameNode = document.createElement('p');
+        nameNode.textContent = item.name;
+        toppings.appendChild(nameNode);
+
+        if(item.type != null) {
+            const typeNode = document.createElement('h1');
+            typeNode.classList.add('drinkOption')
+            typeNode.textContent = item.type;
+            toppings.appendChild(typeNode);
+            toppings.appendChild(typeNode);
+        }
+        toppings.appendChild(nameNode);
+        options.appendChild(toppings);
+    })
+
     menu.appendChild(cafe);
     menu.appendChild(tea);
+    menu.appendChild(boba);
+    menu.appendChild(options)
     
     return menu
 }
