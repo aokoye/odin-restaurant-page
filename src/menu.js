@@ -18,7 +18,7 @@ const coffee = [
     {
         name: 'Espresso',
         description: 'Two shots of espresso',
-        price: '$3.50'
+        price: '$4.00'
     },
     {
         name: 'Americano',
@@ -26,7 +26,7 @@ const coffee = [
         price: '$4.00'
     },
     {
-        type: 'Espresso Drinks With Milk'
+        type: 'Espresso and Milk'
     },
     {
         name: 'Cappuccino',
@@ -36,7 +36,12 @@ const coffee = [
     {
         name: 'Latte',
         description: 'Espresso with steamed milk and foam on top',
-        price: '$5.50 - $6.00'
+        price: '$5.50 - $6.50'
+    },
+    {
+        name: 'Vanilla Latte',
+        description: 'A latte with vanilla syrup.',
+        price: '$6.00 - $7.00'
     },
     {
         name: 'Cortado',
@@ -47,56 +52,136 @@ const coffee = [
         name: 'Mocha',
         description: 'Espresso with steamed milk, chocolate, and foam',
         price: '$6.00 - $7.00'
+    },
+    {
+        type: 'Specialty Drinks'
+    },
+    {
+        name: 'Black Sesame Latte',
+        description: 'We take our signature latte and top it with black sesame foam. Note: This foam contains dairy.',
+        price: '$7.00 - $8.00'
+    },
+    {
+        name: 'Ube Latte',
+        description: "A latte with house made ube syrup",
+        price: '$7.00 - $8.00'
     }
 ];
 
-const bubbleTea = {
-    title: "Brown Sugar Boba"
-}
+const teas = [
+    {
+        type: 'Tea'
+    },
+    {
+        name: 'Hot Tea',
+        description: 'Tea from Smith Tea Makers',
+        price: '$3.50'
+    },
+    {
+        name: 'London Fog',
+        description: 'Early gray mixed with steamed milk and vanilla syrup.',
+        price: '$4.00 - $5.00'
+    },
+    {
+        name: 'Matcha Latte',
+        description: 'Made using matcha that we source ourselves and import directly from Kyoto.',
+        price: ''
+    }
+];
 
 
 export function loadMenu() {
+    const menu = document.createElement('div');
+    menu.classList.add('menu');
+
     const cafe = document.createElement('div');
     cafe.classList.add('coffee');
 
+    const tea = document.createElement('div');
+    cafe.classList.add('tea');
+
     const boba = document.createElement('div');
     boba.classList.add('boba');
-    const titleNode = document.createElement('h2');
-    titleNode.textContent = bubbleTea.title;
-    
+
+    const milk = document.createElement('div');
+    boba.classList.add('milk');
+
+    const toppings = document.createElement('div');
+    boba.classList.add('toppings');
     
 
     coffee.forEach((item) => {
-        const typeNode = document.createElement('h1');
-        typeNode.textContent = item.type;
-        cafe.appendChild(typeNode);
-
         const nameNode = document.createElement('h2');
         nameNode.textContent = item.name;
         cafe.appendChild(nameNode);
 
-        const coffeePrice = document.createElement('p');
-        coffeePrice.classList.add('price');
-        coffeePrice.textContent = item.price;
-        cafe.appendChild(coffeePrice);
+        const price = document.createElement('p');
+        price.classList.add('price');
+        price.textContent = item.price;
+        cafe.appendChild(price);
 
         const descNode = document.createElement('p')
-        descNode.classList.add('discretion');
+        descNode.classList.add('description');
         descNode.textContent = item.description;
         cafe.appendChild(descNode);
 
         const product = document.createElement('div')
-        cafe.appendChild(typeNode);
-        product.classList.add('product')
+        product.classList.add('product');
+        const prodPrice = document.createElement('div')
+        prodPrice.classList.add('prodPrice');
+
+        if(item.type != null) {
+            const typeNode = document.createElement('h1');
+            typeNode.classList.add('drinkType')
+            typeNode.textContent = item.type;
+            cafe.appendChild(typeNode);
+            cafe.appendChild(typeNode);
+        }
+        
         cafe.appendChild(product);
-        product.appendChild(nameNode);
-        product.appendChild(coffeePrice);
+        product.appendChild(prodPrice);
+        prodPrice.appendChild(nameNode);
+        prodPrice.appendChild(price);
+        product.appendChild(descNode);
+    })
+    
+    teas.forEach((item) => {
+        const nameNode = document.createElement('h2');
+        nameNode.textContent = item.name;
+        tea.appendChild(nameNode);
+
+        const price = document.createElement('p');
+        price.classList.add('price');
+        price.textContent = item.price;
+        tea.appendChild(price);
+
+        const descNode = document.createElement('p')
+        descNode.classList.add('description');
+        descNode.textContent = item.description;
+        tea.appendChild(descNode);
+
+        const product = document.createElement('div')
+        product.classList.add('product');
+        const prodPrice = document.createElement('div')
+        prodPrice.classList.add('prodPrice');
+
+        if(item.type != null) {
+            const typeNode = document.createElement('h1');
+            typeNode.classList.add('drinkType')
+            typeNode.textContent = item.type;
+            tea.appendChild(typeNode);
+            tea.appendChild(typeNode);
+        }
+        
+        tea.appendChild(product);
+        product.appendChild(prodPrice);
+        prodPrice.appendChild(nameNode);
+        prodPrice.appendChild(price);
         product.appendChild(descNode);
     })
 
-
-    cafe.appendChild(titleNode)
-    return cafe
-
-    // return document.getElementById("content").innerHTML = element.innerHTML
+    menu.appendChild(cafe);
+    menu.appendChild(tea);
+    
+    return menu
 }
