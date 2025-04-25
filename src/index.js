@@ -31,17 +31,3 @@ function restLocal() {
     clearContent();
     contentNode.appendChild(loadLocation())
 }
-
-
-// loadMenu()
-// hi()
-
-// document.body.appendChild(component());
-// import odinImage from "./odin.png";
-
-// const image = document.createElement("img")
-// image.src = odinImage;
-
-// document.body.appendChild(image)
-
-// console.log("I work!");
