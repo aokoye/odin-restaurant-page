@@ -1,19 +1,8 @@
 import "./styles.css";
 import { renderPage } from "./home.js"
 import { loadMenu } from "./menu.js"
-// import { loadHome } from "./home.js"
-import { component } from "./greeting.js";
+import { loadLocation } from "./location.js"
 
-// document.getElementById("home").addEventListener("click", hm)
-// document.getElementById("menu").addEventListener("click", mu)
-
-// function hm() {
-//     document.getElementById("content").innerHTML = home()
-// }
-
-// function mu() {
-//     document.getElementById("content").innerHTML = loadMenu()
-// }
 const contentNode = document.querySelector('#content');
 
 function clearContent() {
@@ -34,6 +23,13 @@ menuBtn.addEventListener("click", foodMenu);
 function foodMenu() {
     clearContent();
     contentNode.appendChild(loadMenu())
+}
+
+const locationBtn = document.getElementById("location")
+locationBtn.addEventListener("click", restLocal);
+function restLocal() {
+    clearContent();
+    contentNode.appendChild(loadLocation())
 }
 
 

@@ -7,14 +7,21 @@ const data = {
 export const renderPage = () => {
     const masthead = document.createElement('div');
     masthead.classList.add('masthead');
-    const titleNode = document.createElement('h2');
-    titleNode.textContent = data.title;
-    const aboutNode = document.createElement('p')
-    aboutNode.textContent = data.body;
+   
+    const title = document.createElement('h2');
+    title.textContent = data.title;
+    
+    const about = document.createElement('p');
+    about.textContent = data.body;
+    about.classList.add('about');
+    
+    const custom = document.createElement('p');
+    custom.textContent = data.custom;
+    custom.classList.add('custom');
 
-    masthead.appendChild(titleNode);
-    masthead.appendChild(aboutNode);
+    masthead.appendChild(title);
+    masthead.appendChild(about);
+    masthead.appendChild(custom);
     
     return masthead
-    // return document.getElementById("content").innerHTML = masthead.innerHTML
 } 

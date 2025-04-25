@@ -1,8 +1,9 @@
 const coffee = [
+    // {
+    //     type: 'Coffee Drinks'
+    // },
     {
-        type: 'Coffee Drinks'
-    },
-    {
+        type: 'Coffee Drinks',
         name: 'Black Coffee',
         description: 'Coffee from roasted by one of our partners. Ask us what we\'re brewing today.',
         price: '$3.00 - $5.00'
@@ -12,10 +13,11 @@ const coffee = [
         description: 'Brewed in house over the course of 18 hours.',
         price: '$4.00 - $6.00'
     },
-    {
-        type: 'Espresso Drinks'
-    },
-    {
+    // {
+    //     type: 'Espresso Drinks'
+    // },
+    {   
+        type: 'Espresso Drinks',
         name: 'Espresso',
         description: 'Two shots of espresso',
         price: '$4.00'
@@ -25,10 +27,11 @@ const coffee = [
         description: 'Espresso diluted with hot water.',
         price: '$4.00'
     },
-    {
-        type: 'Espresso and Milk'
-    },
-    {
+    // {
+    //     type: 'Espresso and Milk'
+    // },
+    {   
+        type: 'Espresso and Milk',
         name: 'Cappuccino',
         description: 'Two shots of espresso with 8 ounces of steamed milk.',
         price: '$4.50'
@@ -53,15 +56,16 @@ const coffee = [
         description: 'Espresso with steamed milk, chocolate, and foam',
         price: '$6.00 - $7.00'
     },
+    // {
+    //     type: 'Specialty Drinks'
+    // },
     {
-        type: 'Specialty Drinks'
-    },
-    {
+        type: 'Specialty Drinks',
         name: 'Black Sesame Latte',
         description: 'We take our signature latte and top it with black sesame foam. Note: This foam contains dairy.',
         price: '$7.00 - $8.00'
     },
-    {
+    {   
         name: 'Ube Latte',
         description: "A latte with house made ube syrup",
         price: '$7.00 - $8.00'
@@ -69,10 +73,11 @@ const coffee = [
 ];
 
 const teas = [
+    // {
+    //     type: 'Tea'
+    // },
     {
-        type: 'Tea'
-    },
-    {
+        type: 'Tea',
         name: 'Hot Tea',
         description: 'Tea from Smith Tea Makers',
         price: '$3.50'
@@ -95,11 +100,12 @@ const teas = [
 ];
 
 const bobaTea = [
+    // {
+    //     type: 'Milk Tea',
+    //     description: 'Milk in all of these drinks can be substituted for any of our dairy free options'
+    // },
     {
         type: 'Milk Tea',
-        description: 'Milk in all of these drinks can be substituted for any of our dairy free options'
-    },
-    {
         name: 'Oolong Milk Tea',
         price: '$5.50'
     },
@@ -119,11 +125,12 @@ const bobaTea = [
         name: 'Assam Black Milk Tea',
         price: '$5.50'
     },
+    // {
+    //     type: 'Lattes',
+    //     description: 'Milk in all of these drinks can be substituted for any of our dairy free options'
+    // },
     {
         type: 'Lattes',
-        description: 'Milk in all of these drinks can be substituted for any of our dairy free options'
-    },
-    {
         name: 'Hojicha Latte',
         price: '$6.00'
     },
@@ -135,10 +142,11 @@ const bobaTea = [
         name: 'Café Latte',
         price: '$6.00'
     },
-    {
-        type: 'Fruit Teas'
-    },
-    {
+    // {
+    //     type: 'Fruit Teas'
+    // },
+    {   
+        type: 'Fruit Teas',
         name: 'Mango Passion Fruit Green Tea',
         price: '$5.50'
     },
@@ -246,7 +254,7 @@ export function loadMenu() {
             typeNode.classList.add('drinkType')
             typeNode.textContent = item.type;
             cafe.appendChild(typeNode);
-            cafe.appendChild(typeNode);
+            // cafe.appendChild(typeNode);
         }
         
         cafe.appendChild(product);
